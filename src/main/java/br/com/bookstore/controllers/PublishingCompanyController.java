@@ -27,7 +27,7 @@ public class PublishingCompanyController {
 
     @ApiOperation(value = "Get Publishers v1")
     @GetMapping
-    public ResponseEntity<List<PublishingCompanyResponseDTO>> listUsers() {
+    public ResponseEntity<List<PublishingCompanyResponseDTO>> getPublishers() {
         return new ResponseEntity<>(companyFacade.getPublishers(), HttpStatus.OK);
     }
 

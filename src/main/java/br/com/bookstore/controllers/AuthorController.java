@@ -27,7 +27,7 @@ public class AuthorController {
 
     @ApiOperation(value = "Get Author v1")
     @GetMapping
-    public ResponseEntity<List<AuthorResponseDTO>> listUsers() {
+    public ResponseEntity<List<AuthorResponseDTO>> getAuthor() {
         return new ResponseEntity<>(authorFacade.getAuthors(), HttpStatus.OK);
     }
 

@@ -1,9 +1,11 @@
 package br.com.bookstore.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_publishing_company")
@@ -22,4 +24,8 @@ public class PublishingCompany implements Serializable {
 
     @Column(name = "Adress")
     private String adress;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "publishingCompany")
+    private List<Book> books;
 }
