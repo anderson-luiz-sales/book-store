@@ -6,9 +6,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "tb_author")
+@Table(name = "tb_publishing_company")
 @Data
-public class Author implements Serializable {
+public class PublishingCompany implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -20,6 +20,6 @@ public class Author implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "Age")
-    private Integer age;
+    @Column(name = "Adress")
+    private String adress;
 }
