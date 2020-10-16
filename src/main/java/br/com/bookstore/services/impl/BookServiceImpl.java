@@ -1,6 +1,7 @@
 package br.com.bookstore.services.impl;
 
 import br.com.bookstore.entities.Book;
+import br.com.bookstore.exceptions.NotFoundException;
 import br.com.bookstore.repositories.BookRepository;
 import br.com.bookstore.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book findById(Integer id) {
+        if(bookRepository.findByid(id) == null) {
+            throw new NotFoundException("");
+        }
         return bookRepository.findByid(id);
     }
 

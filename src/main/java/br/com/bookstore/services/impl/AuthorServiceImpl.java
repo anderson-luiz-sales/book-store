@@ -1,6 +1,7 @@
 package br.com.bookstore.services.impl;
 
 import br.com.bookstore.entities.Author;
+import br.com.bookstore.exceptions.NotFoundException;
 import br.com.bookstore.repositories.AuthorRepository;
 import br.com.bookstore.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public Author findById(Integer id) {
+        if(authorRepository.findByid(id) == null) {
+            throw new NotFoundException("");
+        }
         return authorRepository.findByid(id);
     }
 
