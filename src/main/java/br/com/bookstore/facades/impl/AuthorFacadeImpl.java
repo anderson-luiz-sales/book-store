@@ -7,6 +7,7 @@ import br.com.bookstore.facades.AuthorFacade;
 import br.com.bookstore.services.AuthorService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class AuthorFacadeImpl implements AuthorFacade {
     }
 
     @Override
+    @Cacheable(cacheNames = "findById", key = "{ 'id:' + #id }")
     public AuthorResponseDTO findById(Integer id) {
         return convertToDTO(authorService.findById(id));
     }
