@@ -9,5 +9,6 @@ public interface AuthorService {
     Author save(Author author);
     List<Author> getAuthors();
     Author findById(Integer id);
+    Author findByName(String name);
     void deleteById(Integer id);
 }

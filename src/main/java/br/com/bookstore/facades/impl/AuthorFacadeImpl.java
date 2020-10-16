@@ -43,6 +43,11 @@ public class AuthorFacadeImpl implements AuthorFacade {
     }
 
     @Override
+    public AuthorResponseDTO findByName(String name) {
+        return convertToDTO(authorService.findByName(name));
+    }
+
+    @Override
     public AuthorResponseDTO update(AuthorRequestDTO authorRequestDTO) {
         return convertToDTO(authorService.save(convertToEntity(authorRequestDTO)));
     }

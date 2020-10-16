@@ -10,6 +10,7 @@ public interface AuthorFacade {
     AuthorResponseDTO save(AuthorRequestDTO authorRequestDTO);
     List<AuthorResponseDTO> getAuthors();
     AuthorResponseDTO findById(Integer id);
+    AuthorResponseDTO findByName(String name);
     AuthorResponseDTO update(AuthorRequestDTO authorRequestDTO);
     void deleteById(Integer id);
 }

@@ -34,6 +34,14 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
+    public Author findByName(String name) {
+        if(authorRepository.findByName(name) == null) {
+            throw new NotFoundException("");
+        }
+        return authorRepository.findByName(name);
+    }
+
+    @Override
     public void deleteById(Integer id) {
         authorRepository.deleteById(id);
     }

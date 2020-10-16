@@ -32,9 +32,15 @@ public class AuthorController {
     }
 
     @ApiOperation(value = "Get By Id Author v1")
-    @GetMapping("/{id}")
+    @GetMapping("/{id}/id")
     public ResponseEntity<AuthorResponseDTO> getById(@PathVariable Integer id) {
         return new ResponseEntity<>(authorFacade.findById(id), HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Get By Name Author v1")
+    @GetMapping("/{name}/name")
+    public ResponseEntity<AuthorResponseDTO> getByName(@PathVariable String name) {
+        return new ResponseEntity<>(authorFacade.findByName(name), HttpStatus.OK);
     }
 
     @ApiOperation(value = "Put Author v1")
