@@ -24,6 +24,7 @@
 		<springfox-swagger-ui>2.9.2</springfox-swagger-ui>
 		<powermock-module-junit4>2.0.7</powermock-module-junit4>
 		<spring-boot-starter-data-redis>2.3.3.RELEASE</spring-boot-starter-data-redis>
+		<spring-boot-starter-actuator>2.1.6.RELEASE</spring-boot-starter-actuator>
 	</properties>
 
 	<dependencies>
@@ -113,7 +114,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
-		
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<version>${spring-boot-starter-actuator}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -26,3 +26,13 @@ spring:
       port: 6379
       time-to-live: 86400s
 
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path: null
+      path-mapping:
+        health: /healthcheck
+
