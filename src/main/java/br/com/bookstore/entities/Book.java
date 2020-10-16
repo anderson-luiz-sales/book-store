@@ -28,7 +28,7 @@ public class Book implements Serializable {
     @JoinColumn(name = "publishingCompany_id")
     private PublishingCompany publishingCompany;
 
-    @OneToMany
-    @JoinTable(name = "tb_book_autor", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
+    @ManyToMany
+    @JoinTable(name = "tb_book_author", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
     private List<Author> authors;
 }

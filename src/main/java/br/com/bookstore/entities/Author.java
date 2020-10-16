@@ -26,6 +26,6 @@ public class Author implements Serializable {
     private Integer age;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "authors")
+    @ManyToMany(mappedBy = "authors")
     private List<Book> books;
 }
